@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: feign
+eureka:
+  client:
+    service-url:
+      default-zone: ${eureka.instance.ip-address}:8761/eureka/
+  instance:
+    ip-address: 192.168.22.5
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+feign:
+  hystrix:
+    enabled: true
